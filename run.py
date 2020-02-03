@@ -13,7 +13,7 @@ try:
         if 'xlsx' == sys.argv[2]:
             print('XLSX')
             builder.xlsxTool(sys.argv[1], sys.argv[3], sys.argv[4])
-        else:
+        if 'xlsx' != sys.argv[2] and 'csv' != sys.argv[2]:
             print(terminal.style.RED('ERROR - WRONG COMMAND'))
             print(terminal.style.YELLOW('example:  run.py <bom_file.xml> <CSV or XLSX> <id_template> <name_file>') + terminal.style.RESET(''))
     else:
@@ -22,4 +22,3 @@ try:
 except IOError:
     #I can't read/convert this file: ...
     print("Error")    
-
