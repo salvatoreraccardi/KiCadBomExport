@@ -8,10 +8,10 @@
 3) Compare two different bom files
 
 ##Features
-- [ X ] Convert .xml to .xlsx
-- [   ] Convert .xml to .csv
-- [ X ] Template prototype
-- [   ] Compare two different bom files
+- [X] Convert .xml to .xlsx
+- [ ] Convert .xml to .csv
+- [X] Template prototype
+- [ ] Compare two different bom files
 
 ##Commands
 
