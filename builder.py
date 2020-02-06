@@ -22,13 +22,17 @@ def xlsxTool(XmlData, template, name):
     title = workbook.add_format({'bold': True, 'align': 'center'})
     cell_format = workbook.add_format({'align': 'center'})
 
-    #Settings Value cell
-    worksheet.write(0, 0, 'Ref', title) 
-    worksheet.set_column(0, 0, 10)
+    #Comment
+    worksheet.write(0, 0, 'Comment', title) 
+    worksheet.set_column(0, 0, 35, cell_format)
 
-    #Settings Value cell
-    worksheet.write(0, 1, 'Value', title) 
-    worksheet.set_column(1, 1, 35, cell_format)
+    #Designator
+    worksheet.write(0, 1, 'Designator', title) 
+    worksheet.set_column(1, 1, 10, cell_format)
+
+    #Footprint
+    worksheet.write(0, 2, 'Footprint', title) 
+    worksheet.set_column(2, 2, 90, cell_format)
 
     #Data pickup from .xml
     net = kicad_netlist_reader.netlist(XmlData)
@@ -41,12 +45,10 @@ def xlsxTool(XmlData, template, name):
             refs += component.getRef() + ", "
             c = component
             print(str(row) + ' | ' + c.getRef() + ' | ' + c.getValue())
-            #print(c.getRef())
-            #print(c.getValue())
-            worksheet.write(row, 0, c.getRef()) 
-            worksheet.write(row, 1, c.getValue()) 
-            #sleep(0.05)
-            row = row + 1
-        #row = row + 1
-    
+
+            worksheet.write(row, 0, c.getValue()) 
+            worksheet.write(row, 1, c.getRef()) 
+            worksheet.write(row, 2, c.getFootprint()) 
+
+            row = row + 1    
     workbook.close()

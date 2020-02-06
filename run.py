@@ -4,6 +4,10 @@ import terminal
 
 #command example:  test.py <bom_file.xml> <CSV | .XLSX> <id_template> <name_new_file>
 
+#ID_TEMPLATE:
+#   T1: For JLSCPCB
+#       
+
 try:
     if sys.argv[1].lower().endswith(('.xml')):
 
