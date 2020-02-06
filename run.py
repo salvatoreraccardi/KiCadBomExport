@@ -15,7 +15,6 @@ try:
             print('CSV')
             #builder.csvTool(sys.argv[1], sys.argv[3], sys.argv[4])
         if 'xlsx' == sys.argv[2]:
-            print('XLSX')
             builder.xlsxTool(sys.argv[1], sys.argv[3], sys.argv[4])
         if 'xlsx' != sys.argv[2] and 'csv' != sys.argv[2]:
             print(terminal.style.RED('ERROR - WRONG COMMAND'))
